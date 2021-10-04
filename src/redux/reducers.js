@@ -11,7 +11,7 @@ export function todoApp(previousState = initialState, action) {
         ];
     }
 
-    return previousState;
+    return previousState; 
 }
 
 /*
