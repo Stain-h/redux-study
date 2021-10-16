@@ -12,7 +12,6 @@ store.subscribe(()=> {
 store.dispatch(addTodo('할일'))
 store.dispatch(completeTodo(0))
 store.dispatch(showComplete())
-store.dispatch(showAll())
 
 
 ReactDOM.render(
