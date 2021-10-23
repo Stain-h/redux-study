@@ -1,15 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-import TodoFormContainer from './containers/TodoFormContainer';
+import UserListContainer from './containers/UserListContainer';
 import TodoListContainer from './containers/TodoListContainer';
+import TodoFormContainer from './containers/TodoFormContainer';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <TodoFormContainer />
+        <UserListContainer />
         <TodoListContainer />
+        <TodoFormContainer />
       </header>
     </div>
   );
