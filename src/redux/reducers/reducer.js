@@ -3,9 +3,9 @@ import todos from './todos';
 import filter from './filter';
 import users from './users';
 
-const reducer = combineReducers({todos, filter, users})
+const todoApp = combineReducers({todos, filter, users})
 
-export default reducer;
+export default todoApp;
 
 /*
 		Reducer 란?
