@@ -59,7 +59,7 @@ export function getUsersPromise() {
     return {
         type: GET_USERS,
         payload: async() => {
-          const res = await axios.get('https://aapi.github.com/users');
+          const res = await axios.get('https://api.github.com/users');
           return res.data;
         }
     }
