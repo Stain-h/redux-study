@@ -8,7 +8,7 @@ export default function UserListContainer(){
   const dispatch = useDispatch();
 
   const getUsers = useCallback(() => {
-    dispatch(getUsersPromise());
+    dispatch(getUsersThunk());
   }, [dispatch])
 
   return <UserList users={users} getUsers={getUsers} />

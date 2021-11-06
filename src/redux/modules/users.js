@@ -79,13 +79,25 @@ export default function reducer(state = initialState, action) {
   return state;
 }
 
+function sleep(ms){
+  return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      },ms);
+  });
+}
+
 // redux-thunk-middleware
 export function getUsersThunk() {
-  return async(dispatch) => {
-      try {
+  return async(dispatch, getState, {history}) => {
+    try {
+        console.log(history);
           dispatch(getUsersStart());
+          // sleep
+          sleep(2000);
           const res = await axios.get('https://api.github.com/users');
           dispatch(getUsersSuccess(res.data));
+          history.push('/');
       } catch (error) {
           dispatch(getUsersFail(error));
       }
