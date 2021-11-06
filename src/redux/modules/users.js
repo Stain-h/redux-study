@@ -38,7 +38,7 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   if(action.type === GET_USER_START || action.type === GET_USERS_PENDING){
     return {
-      ... state,
+      ...state,
       loading: true,
       error: null
     }
@@ -46,7 +46,7 @@ export default function reducer(state = initialState, action) {
 
   if(action.type === GET_USER_SUCCESS){
     return {
-      ... state,
+      ...state,
       loading: false,
       data: action.data
     }
@@ -54,7 +54,7 @@ export default function reducer(state = initialState, action) {
 
   if(action.type === GET_USERS_FULFILLED){
     return {
-      ... state,
+      ...state,
       loading: false,
       data: action.payload
     }
@@ -62,7 +62,7 @@ export default function reducer(state = initialState, action) {
 
   if(action.type === GET_USER_FAIL){
     return {
-      ... state,
+      ...state,
       loading: false,
       error: action.error
     }
@@ -70,7 +70,7 @@ export default function reducer(state = initialState, action) {
 
   if(action.type === GET_USERS_REJECTED){
     return {
-      ... state,
+      ...state,
       loading: false,
       error: action.payload.message
     }
@@ -93,8 +93,8 @@ export function getUsersThunk() {
     try {
         console.log(history);
           dispatch(getUsersStart());
-          // sleep
-          sleep(2000);
+          //sleep
+          await sleep(2000);
           const res = await axios.get('https://api.github.com/users');
           dispatch(getUsersSuccess(res.data));
           history.push('/');

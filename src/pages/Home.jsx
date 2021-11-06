@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import React from 'react'
+import { useDispatch } from "react-redux";
+import { push } from "connected-react-router";
 
-function Home() {
+export default function Home() {
+  const dispatch = useDispatch();
   return (
     <div>
     <h1>Home</h1>
@@ -9,8 +11,13 @@ function Home() {
       <li><Link to="/todos">todos</Link></li>
       <li><Link to="/users">users</Link></li>
     </ul>
+    <button onClick={click}>todos 로 이동</button>
   </div>
   )
+
+  function click(){
+    dispatch(push('/todos'));
+  }
 }
 
-export default Home
+
