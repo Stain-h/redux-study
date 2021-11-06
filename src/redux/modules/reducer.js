@@ -5,7 +5,7 @@ import users from './users';
 
 const todoApp = combineReducers({todos, filter, users})
 
-export default todoApp;
+export default todoApp; 
 
 /*
 		Reducer 란?
